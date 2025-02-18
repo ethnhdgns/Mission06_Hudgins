@@ -6,26 +6,26 @@ namespace Mission06_Hudgins.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
+    // index page
     public IActionResult Index()
     {
         return View();
     }
-
-    public IActionResult Privacy()
+    // page 2
+    public IActionResult Gettoknow()
     {
         return View();
     }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    // viewing the add form
+    [HttpGet]
+    public IActionResult AddMovie()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View("AddMovie");
+    }
+    // submitting add form
+    [HttpPost]
+    public IActionResult AddMovie(movies response)
+    {
+        return View("Confirmation", response);
     }
 }

@@ -1,8 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Mission06_Hudgins.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// connect to database
+builder.Services.AddDbContext<moviesContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:BlahConnection"]);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
