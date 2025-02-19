@@ -9,7 +9,7 @@ namespace Mission06_Hudgins.Models
         }
 
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<CategoryID> CategoryIds { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)

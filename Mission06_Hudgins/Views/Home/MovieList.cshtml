@@ -1,35 +1,40 @@
-@model Movie
-@{
-    ViewData["Title"] = "Movie List";
-}
-<h1 class="text-center my-4">@ViewData["Title"]</h1>
+@model List<Mission06_Hudgins.Models.Movie>
 
 <div class="container">
+    <h2>Movie List</h2>
     <table class="table table-striped table-bordered">
-    <thead class="table-dark">
+        <thead class="table-dark">
         <tr>
             <th>Title</th>
-            <th>Category</th>
+            <th>Category ID</th>
             <th>Year</th>
             <th>Director</th>
             <th>Rating</th>
             <th>Edited</th>
             <th>Lent To</th>
+            <th>Copied to Plex</th>
             <th>Notes</th>
         </tr>
-    </thead>
-    
-    {
+        </thead>
         <tbody>
-        <td>@Model.Title</td>
-        <td>@Model.Category</td>
-        <td>@Model.Year</td>
-        <td>@Model.Director</td>
-        <td>@Model.Rating</td>
-        <td>@Model.Edited</td>
-        <td>@Model.Lent_to</td>
-        <td>@Model.Notes</td>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>@movie.CategoryID</td>
+                <td>@movie.Year</td>
+                <td>@movie.Director</td>
+                <td>@movie.Rating</td>
+                <td>
+                    <input type="checkbox" disabled @(movie.Edited ? "checked" : "") /> <!-- Display "checked" if Edited is true -->
+                </td>
+                <td>@movie.LentTo</td> <!-- LentTo is optional and displayed as text -->
+                <td>
+                    <input type="checkbox" disabled @(movie.CopiedToPlex ? "checked" : "") /> <!-- Display "checked" if CopiedToPlex is true -->
+                </td>
+                <td>@movie.Notes</td> <!-- Notes is optional and displayed as text -->
+            </tr>
+        }
         </tbody>
-    }
     </table>
 </div>

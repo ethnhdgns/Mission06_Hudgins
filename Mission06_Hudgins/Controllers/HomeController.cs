@@ -43,8 +43,8 @@ public class HomeController : Controller
     {
         var movies = _context.Movies
             .OrderBy(x => x.Title).ToList();
-
-        return View();
+        
+        return View(movies);
     }
 }
     

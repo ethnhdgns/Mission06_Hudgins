@@ -1,7 +1,7 @@
 namespace Mission06_Hudgins.Models;
 
-public class CategoryID
+public class Category
 {
     public int CategoryId { get; set; }
-    public string Category { get; set; }
+    public string CategoryName { get; set; }
 }
