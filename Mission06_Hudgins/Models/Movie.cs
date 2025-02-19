@@ -1,8 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Mission06_Hudgins.Models;
 
-    public class movies
+    public class Movie
     {
+        
+        [Key]
+        [Required]
+        public int CategoryId { get; set; }
         // these are all the values im taking from the addmovies form
+        [ForeignKey("CategoryId")]
         public string Category { get; set; }
 
         public string Title { get; set; }

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // connect to database
-builder.Services.AddDbContext<moviesContext>(options =>
+builder.Services.AddDbContext<MoviesContext>(options =>
 {
     options.UseSqlite(builder.Configuration["ConnectionStrings:BlahConnection"]);
 });
