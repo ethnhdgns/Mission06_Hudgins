@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/Mission06_Hudgins.styles.css" asp-append-version="true"/>
     <link rel="icon" type="img/x-icon" href="~/img/JoelHiltonHeadshot.jpg">
-
 </head>
 <body>
 <header>
@@ -35,17 +34,19 @@
         </div>
     </nav>
 </header>
-<div class="container">
+
+<div class="container-fluid">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
+<footer>
+    <div>
         &copy; 2025 - Made by Ethan Hudgins
     </div>
 </footer>
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>

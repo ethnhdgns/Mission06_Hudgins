@@ -1,54 +1,28 @@
 html, body {
-  height: 100%; /* Ensure body takes up the full height */
-  margin: 0; /* Remove default margin */
+  height: 100%; /* Ensure both html and body take the full height */
+  margin: 0;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100%; /* Ensure it takes up the full viewport height */
-  overflow: auto; /* Allow scrolling on body */
-  padding-bottom: 60px; /* Add space for the fixed footer */
+  min-height: 100vh; /* Make sure body takes up full viewport height */
 }
 
-form {
-  max-width: 600px; /* Limit form width */
-  margin: 0 auto; /* Center the form */
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-grow: 1; /* Allow the form to grow and fill the space */
-  overflow-y: auto; /* Allow scrolling within the form if content overflows */
-  margin-bottom: 20px; /* Add space between form and footer */
-}
-
-input, textarea, select {
-  width: 100%; /* Full-width inputs */
-  padding: 0.5rem; /* Space inside inputs */
-  font-size: 0.8rem; /* Consistent font size */
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  margin-bottom: 5px; /* Add space between inputs */
+main {
+  flex: 1; /* Allow main content to grow and take available space */
+  overflow-y: auto; /* Enable vertical scrolling inside main content */
+  padding-bottom: 60px; /* Space for the footer */
 }
 
 footer {
-  position: fixed; /* Fix the footer to the bottom */
-  bottom: 0; /* Position it at the bottom of the screen */
-  left: 0;
-  width: 100%; /* Ensure it spans the full width */
   text-align: center;
   padding: 10px;
-  background-color: #fff; /* Background color for footer */
-  border-top: 10px solid #ccc; /* Optional: Border at the top of the footer */
+  background-color: #fff;
+  border-top: 10px solid #ccc;
+  margin-top: auto;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+html {
+  overflow: visible;
 }

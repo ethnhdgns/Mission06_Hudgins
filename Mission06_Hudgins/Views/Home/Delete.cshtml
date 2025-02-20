@@ -1,0 +1,28 @@
+@model Mission06_Hudgins.Models.Movie
+
+@* delete confirmation page *@
+<div class="container">
+    <h2>Are you sure you want to delete this movie?</h2>
+    <dl class="dl-horizontal">
+        <dt>Title:</dt>
+        <dd>@Model.Title</dd>
+
+        <dt>Category ID:</dt>
+        <dd>@Model.CategoryID</dd>
+
+        <dt>Year:</dt>
+        <dd>@Model.Year</dd>
+
+        <dt>Director:</dt>
+        <dd>@Model.Director</dd>
+
+        <dt>Rating:</dt>
+        <dd>@Model.Rating</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="MovieID" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="@Url.Action("MovieList", "Home")" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

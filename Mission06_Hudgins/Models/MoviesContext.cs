@@ -14,7 +14,7 @@ namespace Mission06_Hudgins.Models
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Movie>().HasNoKey(); // Make the entity keyless
+            modelBuilder.Entity<Movie>().HasKey(m => m.MovieID); // Make the entity keyless
         }
 
     }
