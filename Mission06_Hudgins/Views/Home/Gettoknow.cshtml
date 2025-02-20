@@ -1,6 +1,24 @@
 ﻿@{
     ViewData["Title"] = "Get to Know Joel";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    @* Link requirement #1 *@
+    <p class="lead text-center">
+        Check out <a href="https://www.qwcomedy.com/" target="_blank" class="btn btn-link">Quick Wits Comedy</a>, where Joel performs regularly.
+    </p>
+
+    @* Link requirement #2 *@
+    <p class="lead text-center">
+        Also, visit <a href="https://baconsale.com/" target="_blank" class="btn btn-link">Baconsale</a> for more fun content.
+    </p>
+
+    @* Photo link requirement *@
+    <div class="text-center mt-4">
+        <a href="https://baconsale.com/" target="_blank">
+            <img src="~/img/BaconsaleKate.jpg" alt="Joel - Baconsale" class="img-fluid" style="max-width:25%; height:auto;">
+        </a>
+    </div>
+</div>
